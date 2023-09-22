@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     name: Build
@@ -13,12 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-          
-      - name: Debug SonarQube URL
-        run: echo "SonarQube URL: ${{ secrets.SONAR_HOST_URL }}"
-      
+          fetch-depth: 0 
       - uses: sonarsource/sonarqube-scan-action@v1
+        with:
+          args: -X
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
