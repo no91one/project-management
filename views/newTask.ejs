@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add new Task</title>
+</head>
+<body>
+  <h1>Add task</h1>
+  <form action="/tasks/newTask" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="textarea" name="description" placeholder="Description" required>
+    <input type="text" name="assignedTo" placeholder="Assign To">
+    <input type="text" name="project" placeholder="Project ID" required>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>

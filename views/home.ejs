@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Users</title>
+</head>
+<body>
+  <h1><%= user.username %> - <%= user._id %></h1>
+  <h2>Assigned Tasks</h2>
+        <ul>
+        <% user.tasks.forEach(task => { %>
+            <li><%= task.title%></li>
+        <% }); %>
+    </ul>
+  
+</body>
+</html>

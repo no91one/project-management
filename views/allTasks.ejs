@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks</title>
+</head>
+<body>
+  <h1>All Tasks</h1>
+  <ul>
+    <% tasks.forEach(task => { %>
+      <h3><%= task.title %></h3>
+      <p><strong>Description</strong><%= task.description %></p>
+      <li><strong>Status</strong> - <%= task.status %></li>
+      <li><strong>Assigned To</strong> - <%= task.assignedTo.username %></li>
+      <li><strong>Project</strong> - <%= task.project.name %></li>
+      <button style="background-color: brown; ">
+        <a class="delete-task-button" style="text-decoration: none; color: cornsilk;"
+            href="/tasks/deletetask/<%= task._id %>">Del</a>
+    </button>
+    <% }); %>
+  </ul>
+</body>
+</html>

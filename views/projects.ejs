@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+</head>
+<body>
+  <h1>All Projects</h1>
+  <ul>
+    <% projects.forEach(project => { %>
+      <li><%= project.name %> - <%= project.content %> - <%= project._id%> - <%=project.createdBy.username%></li>
+      <button style="background-color: brown; ">
+        <a class="delete-task-button" style="text-decoration: none; color: cornsilk;"
+            href="/projects/deleteProject/<%= project._id %>">Del</a>
+    </button>
+    <% }); %>
+    
+  </ul>
+</body>
+</html>
